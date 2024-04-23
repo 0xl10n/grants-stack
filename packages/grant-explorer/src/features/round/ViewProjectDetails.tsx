@@ -35,6 +35,8 @@ import { Box, Skeleton, SkeletonText, Tab, Tabs } from "@chakra-ui/react";
 import { GrantList } from "./KarmaGrant/GrantList";
 import { useGap } from "../api/gap";
 import { CheckIcon, ShoppingCartIcon } from "@heroicons/react/24/outline";
+import { StatList } from "./OSO/ImpactStats";
+import { useOSO } from "../api/oso";
 import { DataLayer, useDataLayer } from "data-layer";
 import { DefaultLayout } from "../common/DefaultLayout";
 import { truncate } from "../common/utils/truncate";
@@ -120,6 +122,7 @@ export default function ViewProjectDetails() {
     round?.roundMetadata?.quadraticFundingConfig?.sybilDefense === true;
 
   const { grants } = useGap(projectToRender?.projectRegistryId as string);
+  const { stats } = useOSO(projectToRender?.projectRegistryId as string);
 
   const currentTime = new Date();
   const isAfterRoundEndDate =
@@ -202,11 +205,16 @@ export default function ViewProjectDetails() {
         ),
       },
       {
-        name: "Milestone updates",
-        content: <GrantList grants={grants} />,
+        name: "Impact Measurement",
+        content: (
+          <React.Fragment>
+            <StatList stats={stats} />
+            <GrantList grants={grants} />
+          </React.Fragment>
+        ),
       },
     ],
-    [grants, projectToRender, description]
+    [stats, grants, projectToRender, description]
   );
 
   const handleTabChange = (tabIndex: number) => {
@@ -360,7 +368,7 @@ function ProjectLinks({ project }: { project?: Project }) {
       className={`grid md:grid-cols-2 gap-4  border-y-[2px] py-4 my-4 ${
         // isLoading?
         createdAt ? "" : "bg-grey-100 animate-pulse"
-      }`}
+        }`}
     >
       <ProjectLink icon={EthereumIcon}>
         {ens.data || truncate(recipient)}
@@ -576,15 +584,15 @@ export function ProjectStats() {
           isBeforeRoundEndDate === undefined
             ? ""
             : isBeforeRoundEndDate
-            ? "to go"
-            : "Round ended"
+              ? "to go"
+              : "Round ended"
         }
       </Stat>
     </div>
   );
 }
 
-function Stat({
+export function Stat({
   value,
   children,
   isLoading,
@@ -663,7 +671,7 @@ async function isVerified(args: {
   const { verifiableCredential, provider, project, dataLayer } = args;
 
   const passportVerifier = new PassportVerifierWithExpiration();
-  const  vcHasValidProof = await passportVerifier.verifyCredential(verifiableCredential);
+  const vcHasValidProof = await passportVerifier.verifyCredential(verifiableCredential);
 
   const vcIssuedByValidIAMServer = verifiableCredential.issuer === IAM_SERVER;
   const providerMatchesProject = vcProviderMatchesProject(
