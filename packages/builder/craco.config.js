@@ -11,6 +11,10 @@ const esmModules = [
 ];
 
 module.exports = {
+  // not at dev
+  eslint: {
+    enable: false
+  },
   jest: {
     configure: () => ({
       preset: "ts-jest/presets/js-with-ts",
@@ -34,8 +38,9 @@ module.exports = {
   },
   webpack: {
     plugins: {
-      add: [new VerifyEnvPlugin()],
+      // add: [new VerifyEnvPlugin()],
     },
+
     configure: {
       devtool: "eval-source-map",
       module: {

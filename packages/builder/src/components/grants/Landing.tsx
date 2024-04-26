@@ -72,17 +72,21 @@ function Landing() {
       <LandingHeader />
       <section className="flex flex-col md:flex-row">
         <div className="flex flex-1 flex-col justify-center container px-8 md:px-10 md:pl-4 ml-20">
-          <div>
+          <div className="px-2">
+            Powered by
             <img
               className="inline-block ml-2"
               src={GitcoinLogoText}
               alt="Gitcoin Logo"
             />
+            Builder
           </div>
-          <h1 className="w-auto text-5xl md:text-7xl mb-8 mt-4">Builder</h1>
+          <h1 className="w-auto text-5xl md:text-7xl mb-8 mt-4">
+            Ethereum Localization Service Grant Portal
+          </h1>
           <p className="text-black text-xl w-full md:max-w-4xl">
-            Build and fund your project all in one place, and bring your vision
-            to life.
+            Build and fund your Localization initiatives, bring Ethereum to next
+            Billions
           </p>
           {!isConnected && (
             <div className="mt-8 mb-8 md:mb-0">

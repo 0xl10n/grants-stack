@@ -13,7 +13,6 @@ import CustomerSupport from "./base/CustomerSupport";
 import colors from "../styles/colors";
 import Hamburger from "./icons/Hamburger";
 import Plus from "./icons/Plus";
-import { GitcoinLogo, BuilderLogo } from "../assets";
 
 export default function Header({
   alloVersionSwitcherVisible = true,
@@ -30,14 +29,10 @@ export default function Header({
         <div className="container mx-auto flex flex-wrap items-center justify-between">
           <div className="w-full relative flex justify-between lg:w-auto lg:static lg:block lg:justify-start">
             <Link to={grantsPath()}>
-              <div className="flex">
-                <img
-                  className="py-4 mr-4"
-                  alt="Gitcoin Logo"
-                  src={GitcoinLogo}
-                />
+              <div className="flex align-middle items-center">
+                🌐
                 <span className="border border-gitcoin-separator my-[1.35rem] mr-4" />
-                <img className="py-4" alt="Builder Logo" src={BuilderLogo} />
+                Ethereum Localization Service Grant Portal
               </div>
             </Link>
             <button
@@ -51,9 +46,8 @@ export default function Header({
             </button>
           </div>
           <div
-            className={`lg:flex flex-grow items-center${
-              navbarOpen ? " flex" : " hidden"
-            }`}
+            className={`lg:flex flex-grow items-center${navbarOpen ? " flex" : " hidden"
+              }`}
             id="example-navbar-danger"
           >
             <div className="flex flex-col lg:flex-row list-none lg:ml-auto items-center">
