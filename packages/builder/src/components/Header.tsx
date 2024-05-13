@@ -37,6 +37,7 @@ export default function Header({
             </Link>
             <button
               type="button"
+              aria-label="Toggle Menu"
               onClick={() => setNavbarOpen(!navbarOpen)}
               className="lg:hidden"
             >
@@ -82,6 +83,7 @@ export default function Header({
               <button
                 type="button"
                 className="underline"
+                aria-label="Switch to Allo v2"
                 onClick={(e) => {
                   e.preventDefault();
                   switchToVersion("allo-v2");
