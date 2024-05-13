@@ -372,6 +372,7 @@ importers:
     dependencies:
       '@allo-team/allo-v2-sdk':
 <<<<<<< HEAD
+<<<<<<< HEAD
         specifier: ^1.0.61
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -386,6 +387,10 @@ importers:
         specifier: 1.0.67
         version: 1.0.67(@typechain/ethers-v6@0.5.1)(ethers@5.7.2)(typechain@8.3.2)(typescript@5.4.5)(zod@3.22.4)
 >>>>>>> d44273e6 (Add direct grants lite (#3341))
+=======
+        specifier: ^1.0.71
+        version: 1.0.71(@typechain/ethers-v6@0.5.1)(ethers@5.7.2)(typechain@8.3.2)(typescript@5.4.5)(zod@3.22.4)
+>>>>>>> e410416e (Add Lukso/ Celo support (#3410))
       '@ethersproject/abstract-signer':
         specifier: ^5.7.0
         version: 5.7.0
@@ -1312,6 +1317,7 @@ packages:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   /@allo-team/allo-v2-sdk@1.0.72(@typechain/ethers-v6@0.5.1)(ethers@5.7.2)(ts-node@10.9.1)(typechain@8.3.2)(typescript@5.4.5)(zod@3.22.4):
     resolution: {integrity: sha512-/vQ6DI6X7TlrgsU9vfVCihwkOWJkZjOiOSfyA7LiH3tSo9EVyhgEXtwirNExnbJEgKpI/Mm5wzQMfX3gW+om7A==}
 =======
@@ -1342,6 +1348,10 @@ packages:
 =======
   /@allo-team/allo-v2-sdk@1.0.67(@typechain/ethers-v6@0.5.1)(ethers@5.7.2)(typechain@8.3.2)(typescript@5.4.5)(zod@3.22.4):
     resolution: {integrity: sha512-q1+1AfkGFRkmYrP7lK/c0ggiVb2eOzfv05nFpJiReTgRL9aL2ubSmnLF492jSphvPcAe5nj9nNZ1peKzO3qLlA==}
+=======
+  /@allo-team/allo-v2-sdk@1.0.71(@typechain/ethers-v6@0.5.1)(ethers@5.7.2)(typechain@8.3.2)(typescript@5.4.5)(zod@3.22.4):
+    resolution: {integrity: sha512-M1IvYJgvgAH+ONY5F5RY4dQr2CjVMa14jEZwt2dOEsSMQVXiolIbu0ul+dgIY1Xa6JqkhryESIpMi4Gh3g+HMA==}
+>>>>>>> e410416e (Add Lukso/ Celo support (#3410))
     engines: {node: '>=16.15.0', npm: '>=8.5.5'}
     dependencies:
       '@typechain/hardhat': 9.1.0(@typechain/ethers-v6@0.5.1)(ethers@5.7.2)(hardhat@2.22.3)(typechain@8.3.2)
@@ -1350,8 +1360,12 @@ packages:
       events: 3.3.0
       hardhat: 2.22.3(typescript@5.4.5)
       mocha: 10.4.0
+<<<<<<< HEAD
       viem: 1.21.4(typescript@5.4.5)(zod@3.22.4)
 >>>>>>> 0463be64 (Manager changes for Passport Lite x Cluster Match MVP (#3336))
+=======
+      viem: 2.10.5(typescript@5.4.5)(zod@3.22.4)
+>>>>>>> e410416e (Add Lukso/ Celo support (#3410))
     transitivePeerDependencies:
       - '@typechain/ethers-v6'
       - bufferutil
@@ -28370,6 +28384,7 @@ packages:
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   /viem@2.10.11(typescript@5.4.5)(zod@3.22.4):
     resolution: {integrity: sha512-V+y+INWpprABSAf35b2SwqCA97WUyhgtmoPPae6jN1yo+V7tNXg3rUvRukT1/9CD9f8QnhfpiZXkVSgtXbINRg==}
 =======
@@ -28379,6 +28394,10 @@ packages:
 >>>>>>> 0463be64 (Manager changes for Passport Lite x Cluster Match MVP (#3336))
     resolution: {integrity: sha512-BNVYdSaUjeS2zKQgPs+49e5JKocfo60Ib2yiXOWBT6LuVxY1I/6fFX3waEtpXvL1Xn4qu+BVitVtMh9lyThyhQ==}
 >>>>>>> 6f02eb49 (log donation errors to sentry (#3388))
+=======
+  /viem@2.10.5(typescript@5.4.5)(zod@3.22.4):
+    resolution: {integrity: sha512-rzU2y6poYgXu7axcQmwddaJ/nGP3tjtslXdUCu+PvryeXACuuqoyP3chjTEHciG84a663gYbrVGbxNUFA3aURQ==}
+>>>>>>> e410416e (Add Lukso/ Celo support (#3410))
     peerDependencies:
       typescript: '>=5.0.4'
     peerDependenciesMeta:
@@ -28392,6 +28411,7 @@ packages:
       '@scure/bip39': 1.2.1
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       abitype: 1.0.0(typescript@5.4.5)(zod@3.22.4)
       isows: 1.0.4(ws@8.13.0)
       typescript: 5.4.5
@@ -28402,6 +28422,9 @@ packages:
 >>>>>>> 6f02eb49 (log donation errors to sentry (#3388))
 =======
       abitype: 0.9.8(typescript@5.4.5)(zod@3.22.4)
+=======
+      abitype: 1.0.0(typescript@5.4.5)(zod@3.22.4)
+>>>>>>> e410416e (Add Lukso/ Celo support (#3410))
       isows: 1.0.3(ws@8.13.0)
       typescript: 5.4.5
 >>>>>>> 0463be64 (Manager changes for Passport Lite x Cluster Match MVP (#3336))
