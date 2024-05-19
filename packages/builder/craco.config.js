@@ -1,7 +1,8 @@
 const path = require("path");
 const CracoEsbuildPlugin = require("craco-esbuild");
 const { VerifyEnvPlugin } = require("verify-env");
-
+const BundleAnalyzerPlugin =
+  require("webpack-bundle-analyzer").BundleAnalyzerPlugin;
 const esmModules = [
   "@rainbow-me",
   "@spruceid",
@@ -38,10 +39,37 @@ module.exports = {
   },
   webpack: {
     plugins: {
+      // add: [new BundleAnalyzerPlugin({ analyzerMode: "server" })],
       // add: [new VerifyEnvPlugin()],
     },
-
     configure: {
+
+      optimization: {
+        runtimeChunk: true,
+        concatenateModules: false,
+        splitChunks: {
+          // must use all as async result in 10mb
+          chunks: 'initial',
+          minSize: 100000,
+          maxSize: 500000,
+          minRemainingSize: 0,
+          minChunks: 5,
+          maxAsyncRequests: 30,
+          maxInitialRequests: 20,
+          cacheGroups: {
+            defaultVendors: {
+              test: /[\\/]node_modules[\\/]/,
+              priority: -10,
+              reuseExistingChunk: true,
+            },
+            default: {
+              minChunks: 10,
+              priority: -20,
+              reuseExistingChunk: true,
+            },
+          },
+        },
+      },
       devtool: "eval-source-map",
       module: {
         rules: [
