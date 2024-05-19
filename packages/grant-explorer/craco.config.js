@@ -31,6 +31,10 @@ if (process.env.REACT_APP_ENV === "production") {
 }
 
 module.exports = {
+  // not at dev
+  eslint: {
+    enable: false
+  },
   webpack: {
     configure: {
       devtool: "source-map", // Source map generation must be turned on
